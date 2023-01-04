@@ -23,7 +23,7 @@ const app = {
                         .catch(error => {
                             console.log(error.response.data);
                             alert("請先登入帳號密碼喔～不要偷懶(ゝ∀･)b 感謝你！")
-                            this.goIndex();
+                            location.href = "index.html";
                         })
         },
         //取得 Token (Token 僅需設定一次)
@@ -32,10 +32,6 @@ const app = {
             const token = document.cookie.replace(/(?:(?:^|.*;\s*)week2HexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
             // console.log(token);
             axios.defaults.headers.common['Authorization'] = token;
-        },
-        //跳回至登入頁面
-        goIndex(){
-            location.href = "index.html";
         },
     },
     //生命週期，元件開始的時候，執行以下這段

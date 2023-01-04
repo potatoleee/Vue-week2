@@ -33,15 +33,14 @@ const app = {
                 document.cookie = `week2HexToken=${token}; expires=${ new Date (expired) };`;
                 //這邊也都要this.才可以取到
                 this.checkLogin();
-                this.goProduct();
+                //跳轉至產品頁面
+                location.href = "product.html";
             })
             .catch(error => {
                 console.log(error.response);
                 alert("尚未登入");
             })
             }
-            
-            
         },
         //驗證是否登入
         checkLogin(){
@@ -62,10 +61,6 @@ const app = {
             //     })
             
         },
-        //跳轉至產品頁面
-        goProduct(){
-            location.href = "product.html";
-        }
     },
      //生命週期，元件開始的時候，執行以下這段
     mounted() {
