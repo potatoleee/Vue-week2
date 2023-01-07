@@ -37,7 +37,6 @@ const app = {
                 location.href = "product.html";
             })
             .catch(error => {
-                console.log(error.response);
                 alert("尚未登入");
             })
             }
@@ -47,7 +46,6 @@ const app = {
             // #2 取得 Token (Token 僅需設定一次)
             // var myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)test2\s*\=\s*([^;]*).*$)|^.*$/, "$1");
             const token = document.cookie.replace(/(?:(?:^|.*;\s*)week2HexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            console.log(token);
             axios.defaults.headers.common['Authorization'] = token;
 
             // 確認是否登入 api
